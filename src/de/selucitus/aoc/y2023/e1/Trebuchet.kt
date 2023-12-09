@@ -17,10 +17,11 @@ fun main() {
  * @param file The file to evaluate
  * @return the sum of all two-digit numbers
  */
-fun part1(file: File): Int = file
-    .bufferedReader()
-    .lineSequence()
-    .sumOf { it.first { c -> c.isDigit() }.digitToInt() * 10 + it.last { c -> c.isDigit() }.digitToInt() }
+fun part1(file: File): Int = file.useLines { lines ->
+    lines.sumOf {
+        it.first { c -> c.isDigit() }.digitToInt() * 10 + it.last { c -> c.isDigit() }.digitToInt()
+    }
+}
 
 /**
  * Solves part 2 of the exercise.
@@ -31,7 +32,7 @@ fun part1(file: File): Int = file
  * @see part1 for only digits
  * @see numberMap keys for written-out English digits
  */
-fun part2(file: File) = file.bufferedReader().lineSequence().sumOf { getTwoDigitNumber(it) }
+fun part2(file: File) = file.useLines { lines -> lines.sumOf { getTwoDigitNumber(it) } }
 
 /**
  * Map of written-out English digits to the associated [Int] value
