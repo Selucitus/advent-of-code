@@ -5,8 +5,8 @@ import java.io.File
 fun main() {
     val file = File("src/de/selucitus/aoc/y2023/e1/input.txt")
 
-    println("Solution of part 1: ${part1(file)}")
-    println("Solution of part 2: ${part2(file)}")
+    println("Solution for part 1: ${part1(file)}")
+    println("Solution for part 2: ${part2(file)}")
 }
 
 /**
@@ -81,7 +81,7 @@ fun getSanitizedDigit(digit: String) = if (digit.length == 1) digit.toInt() else
 fun getTwoDigitNumber(str: String): Int {
     val regex = numberRegex.find(str) ?: return 0
 
-    val only = regex.groups["only"];
+    val only = regex.groups["only"]
     if (only != null) {
         return getSanitizedDigit(only.value) * 11
     }
@@ -90,5 +90,5 @@ fun getTwoDigitNumber(str: String): Int {
     if (first != null) {
         return getSanitizedDigit(first.value) * 10 + getSanitizedDigit(last!!.value)
     }
-    return 0;
+    return 0
 }
