@@ -1,9 +1,9 @@
-package de.selucitus.aoc.y2023
+package de.selucitus.aoc.y2023.e1
 
 import java.io.File
 
 fun main() {
-    val file = File("src/de/selucitus/aoc/y2023/input.txt")
+    val file = File("src/de/selucitus/aoc/y2023/e1/input.txt")
 
     println("Solution of part 1: ${part1(file)}")
     println("Solution of part 2: ${part2(file)}")
